@@ -1,13 +1,13 @@
-import React from 'react'
-import { Formik, Form, ErrorMessage, Field } from 'formik'
-import Swal from 'sweetalert2'
+import React from 'react';
+import { Formik, Form, ErrorMessage, Field } from 'formik';
+import Swal from 'sweetalert2';
 const Formulario = () => {
     const handleSubmit = (data) => {
-        Swal.fire(`${JSON.stringify(data)}`)
+        Swal.fire(`${JSON.stringify(data)}`);
     }
 
     return (
-        <>
+        
         <div className='container contenedor__form w-100'>
             
             <Formik
@@ -20,15 +20,15 @@ const Formulario = () => {
 
                 }}
                 validate={(valores) => {
-                    let errors = {}
+                    let errors = {};
                     /* Errores para el nombre */
                     if (!valores.name) errors.name = 'Please enter your name';
-                    else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.name))
+                    else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.name));
                     errors.name = 'The name can only contain letters';
 
                     /* Errores para el email*/
                     if (!valores.email) errors.email = 'please enter your email';
-                    else if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(valores.email))
+                    else if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(valores.email));
                      errors.email = `please enter your email correctly`;
 
                     /* Errores para el pass */
@@ -38,7 +38,7 @@ const Formulario = () => {
                 }}
 
                 onSubmit={(valores, { resetForm }) => {
-                    handleSubmit(valores)
+                    handleSubmit(valores);
                     resetForm();
                 }}
             >
@@ -113,8 +113,8 @@ const Formulario = () => {
                 )}
             </Formik>
         </div>
-        </>
+        
     )
 }
 
-export default Formulario
+export default Formulario;
